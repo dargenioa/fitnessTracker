@@ -12,8 +12,8 @@ router.post("/api/workouts", ({ body }, res) => {
 });
 
 router.put("/api/workouts/:id", ({ body }, res) => {
-  db.Workout.create(body)
-    .then(({ _id }) => db.User.findOneAndUpdate({}, { $push: { notes: _id } }, { new: true }))
+  db.Exercise.create(body)
+    .then(({ _id }) => db.Workout.findOneAndUpdate({}, { $push: { notes: _id } }, { new: true }))
     .then(dbWorkout => {
       res.json(dbWorkout);
     })
@@ -25,6 +25,7 @@ router.put("/api/workouts/:id", ({ body }, res) => {
 
 router.get("/api/workouts", (req, res) => {
   db.Workout.find({})
+  .populate("exercises")
   .then(dbWorkout => {
     res.json(dbWorkout);
   })
@@ -35,6 +36,7 @@ router.get("/api/workouts", (req, res) => {
 
 router.get("/api/workouts/range", (req, res) => {
   db.Workout.find({})
+  .populate("exercises")
   .then(dbWorkout => {
     res.json(dbWorkout);
   })

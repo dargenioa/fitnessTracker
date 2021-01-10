@@ -29,9 +29,10 @@ const exerciseSchema = new Schema({
   distance: {
     type: Number,
   },
+
   
 });
 
 const Exercise = mongoose.model("Exercise", exerciseSchema);
 
-module.exports = exerciseSchema;
+module.exports = Exercise;
