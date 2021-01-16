@@ -1,55 +1,58 @@
 # fitnessTracker ![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)
 
-  ## Table of Contents
-  1. [Description](#description)
-  1. [Installation](#installation)
-  1. [Usage](#usage)
-  1. [License](#license)
-  1. [Contributing](#contributing)
-  1. [Tests](#tests)
-  1. [Questions](#questions)
+## Table of Contents
 
-  ## Description
+1. [Description](#description)
+1. [Video Demo](#videodemo)
+1. [Installation](#installation)
+1. [Usage](#usage)
+1. [License](#license)
+1. [Contributing](#contributing)
+1. [Tests](#tests)
+1. [Questions](#questions)
 
-  The burger application is a web application that logs burgers user MySQL, Node, Express and ORM.  This application follows an MVC pattern and uses Node and MySQL toe query and route the data in the application.  It is deployed on Heroku linking the database to JAWSDB_URL.
+## Description
 
-  ## Video Demo
+The fitnessTrack application is a great way to view, create and track daily workouts. It allows the user to log multiple exercises to a workout on a given day. It takes in the name, type, weight, sets, reps, duration and distance(if cardio) of a workout and stores the data into a NoSQL database using MongoDB. The results of the last workout is always displayed on the homepage and the statistics of the last 7 workouts will display on the dashboard using charts and graphs.
 
-  ![](./public/assets/images/Eat-Da-Burger.gif)
+## VideoDemo
 
-  ## Installation
+![](./public/assets/images/fitnessTracker.gif)
 
-  To install this application the user must have node.js installed.  The node depencies that are required are MySQL and Express as well as the JAWSDB_URL add on in Heroku.
-  
+## Installation
+
+To install this application the user must have node.js installed. The node depencies that are required are express, mongoose, and morganto utilze MongoDB. It is deployed on Heroku using Mongo Atlas.
+
   <img src="./public/assets/images/node-dependencies.png" alt="node-dependencies">
 
-  ## Usage
+## Usage
 
-  To get started with the application, run ```node server.js``` or ```npm start``` in the terminal.  The application is one page and easy to navigate.  Any burgers that are waiting to be devoured or deleted will be rendered to the page.  To add a new burger, simply type in the burger name in the input field and hit submit.  Once submitted, the burger will be added to the devoured list.  To devour a burger, simply click on the devour button next to the burger to move it to the waiting to be deleted section.  When the user is ready, they will be able to delete the burger.  The burgers are tracked by an incremental ID in MySQL.
-  
-  <img src="./public/assets/images/burger-homepage.png" alt="burger-homepage">
+To get started with the application, run `node server.js` or `npm start` in the terminal. The application homepage with display the last workout if there were any stored. It will give the user an option to either create a new workout or continue adding to the most recent workout. When selecting either option, the user is able to select from a Resistance workout or Cardio workout. When selected, it will display the additional relevant selections for the workout. Then, the user can either add the exercise or complete the workout. Clicking 'Dashboard' in the navigation bar will bring the user to the statistics dashboard of the lasy 7 workouts, and clicking 'Fitness Tracker' will bring the user back to the homepage.
 
-  ## License
+  <img src="./public/assets/images/lastworkout.png" alt="burger-homepage">
 
-  [The Unlicense](http://unlicense.org/)
+  <img src="./public/assets/images/dashboard.png" alt="dashboard">
 
-  This project is licensed under [The Unlicense](http://unlicense.org/).  Please visit the link for more details.
+## License
 
+[The Unlicense](http://unlicense.org/)
 
-  ## Contributing
+This project is licensed under [The Unlicense](http://unlicense.org/). Please visit the link for more details.
 
-  There were no contributors on this project, but collaboration is welcome.  Please feel free to reach out to me regarding changes to the application by creating an issue in Github or contacting me through email.
+## Contributing
 
-  ## Tests
+There were no contributors on this project, but collaboration is welcome. Please feel free to reach out to me regarding changes to the application by creating an issue in Github or contacting me through email.
 
-  The burgers are tracked by the incremented ID.  This iD is used to delete a burger entirely or to update the status of the burger from devour to delete.  This application has a server, connection to MySQL, an ORM file, a model, a controller and a client side JavaScript file to create ajax calls for the GET, POST, PUT and DELETE requests.  The results are logged to the console and the page will automatically reload using ```location.reload();```.
+## Tests
+
+The workouts are tracked by a unique ID that is auotmatically generated using MongoDB. To add to a workout plan, the unique ID is targets in the API route and a put request is made using findByIdAndUpdate, allowing the exercise to be pushed into the new workout plan. This application has a connection to MongoDB and can utilize RoboT3 to view the database. The GET, POST, and PUT routes are located in the api.js file. The calls use asynchronous JavaScript with .then and .catch to either log the results or the error.
+
+   <img src="./public/assets/images/dbworkout-test.png" alt="asynchronous-javascript">
   
   ## Questions
 
-  **Github:** [dargenioa](http://github.com/dargenioa)
+**Github:** [dargenioa](http://github.com/dargenioa)
 
-  **Email:** [dargenioa14@gmail.com](dargenioa14@gmail.com)
+**Email:** [dargenioa14@gmail.com](dargenioa14@gmail.com)
 
-  For additional questions please feel free to contact me.
-
-
+For additional questions please feel free to contact me.
