@@ -9,6 +9,7 @@
 1. [License](#license)
 1. [Contributing](#contributing)
 1. [Tests](#tests)
+1. [Deply](#deploy)
 1. [Questions](#questions)
 
 ## Description
@@ -48,8 +49,12 @@ There were no contributors on this project, but collaboration is welcome. Please
 The workouts are tracked by a unique ID that is auotmatically generated using MongoDB. To add to a workout plan, the unique ID is targets in the API route and a put request is made using findByIdAndUpdate, allowing the exercise to be pushed into the new workout plan. This application has a connection to MongoDB and can utilize RoboT3 to view the database. The GET, POST, and PUT routes are located in the api.js file. The calls use asynchronous JavaScript with .then and .catch to either log the results or the error.
 
    <img src="./public/assets/images/dbworkout-test.png" alt="asynchronous-javascript">
+
+## Deploy
+
+[Click here to access the deployed application](https://fitness-setup.herokuapp.com/)
   
-  ## Questions
+## Questions
 
 **Github:** [dargenioa](http://github.com/dargenioa)
 
